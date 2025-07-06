@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Card 3D</title>
+    <style>
+        .card-container {
+            perspective: 1000px; /* Tạo hiệu ứng 3D */
+            width: 200px;
+            height: 300px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d; /* Giữ các phần tử con theo 3D */
+            transition: transform 0.6s;
+        }
+
+        .card-container:hover .card {
+            transform: rotateY(180deg); /* Lật card */
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; /* Ẩn mặt sau khi chưa lật */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .card-front {
+            background-image: url('goldennails.jpg'); /* Màu đỏ */
+        }
+
+        .card-back {
+            background-image:url('model.jpg'); /* Màu xanh */
+            transform: rotateY(180deg); /* Quay mặt sau */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="card">
+            <div class="card-front">Mặt trước</div>
+            <div class="card-back">Mặt sau</div>
+        </div>
+    </div>
+
+</body>
+</html>
