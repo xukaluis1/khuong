@@ -1,59 +1,129 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flip Card 3D</title>
-    <style>
-        .card-container {
-            perspective: 1000px; /* Tạo hiệu ứng 3D */
-            width: 200px;
-            height: 300px;
-        }
-
-        .card {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d; /* Giữ các phần tử con theo 3D */
-            transition: transform 0.6s;
-        }
-
-        .card-container:hover .card {
-            transform: rotateY(180deg); /* Lật card */
-        }
-
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden; /* Ẩn mặt sau khi chưa lật */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            border-radius: 10px;
-        }
-
-        .card-front {
-            background-image: url('goldennails.jpg'); /* Màu đỏ */
-        }
-
-        .card-back {
-            background-image:url('model.jpg'); /* Màu xanh */
-            transform: rotateY(180deg); /* Quay mặt sau */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Salon Nails">
+  <title>Salon Nail Beauty</title>
+  <link rel="stylesheet" href="nails.css">
 </head>
 <body>
 
-    <div class="card-container">
-        <div class="card">
-            <div class="card-front">Mặt trước</div>
-            <div class="card-back">Mặt sau</div>
-        </div>
+<header>
+  <a href="#home" class="branch">
+    <img src="logo2.png" width="50px" height="50px">
+    <span class="brand-name">NQ Nails</span>
+  </a>
+  <div class="menu"></div>
+  <div class="navigation">
+    <div class="navigation_menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html/#faq">FAQ</a>
     </div>
+  </div>
+</header>
+
+<section id="home">
+  <div class="banner">
+    <h1>CONTACT</h1>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Contact & Booking</h2>
+  <p>If you have questions or want to make a booking, feel free to reach out to us via phone, Instagram, or email.</p>
+
+  <div class="ggap">
+    <div class="service-category">
+      <h3>📍 Location</h3>
+      <ul>
+        <li><span>21306 Hall Rd</span></li>
+        <li><span>Clinton Twp, MI 48038</span></li>
+      </ul>
+    </div>
+
+    <div class="service-category">
+      <h3>📞 Contact Methods</h3>
+      <ul>
+        <li><span>Phone:</span> <a href="tel:+12488618987" class="price">+1 (248) 861-8987</a></li>
+        <li><span>Email:</span> <a href="mailto:contact@nqnail.com" class="price">contact@nqnail.com</a></li>
+        <li><span>Instagram:</span> <a href="https://www.instagram.com/nqnails" target="_blank" class="price">@nqnails</a></li>
+      </ul>
+    </div>
+
+    <div class="service-category">
+      <h3>🕒 Business Hours</h3>
+      <ul>
+        <li><span>Mon – Fri:</span> <span class="price">9:30 AM – 7:00 PM</span></li>
+        <li><span>Saturday:</span> <span class="price">9:30 AM – 6:30 PM</span></li>
+        <li><span>Sunday:</span> <span class="price">11:00 AM – 4:00 PM</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bapp">
+    <a href="tel:+12488618987" class="cta">Call Now</a>
+    <a href="https://www.instagram.com/nqnails" target="_blank" class="cta">Message on Instagram</a>
+  </div>
+  <div class="bline"></div>
+</section>
+
+<footer>
+  <div class="iFooter">
+    <div class="footer-container">
+      <div class="footer">
+        <div class="brand">
+          <a href="#home" class="branch1">
+            <img src="logo-nq.jpg" width="50" height="50" alt="NQ Logo">
+            NQ Nails
+          </a>
+          <p>"Our nail salon offers high-quality nail care services. We bring beautiful and creative nail designs. Come to us for a wonderful beauty experience."</p>
+        </div>
+
+        <div class="iContact">
+          <h3>Contact</h3>
+          <p>Address: 21306 Hall Rd, Clinton Twp, MI 48038</p>
+          <p>Email: contact@nqnail.com</p>
+          <p>Phone: +1 (248) 861-8987</p>
+        </div>
+
+        <div class="bussiness-hours">
+          <h3>Business Hours</h3>
+          <p>Mon – Fri: 9:30 AM – 7:00 PM</p>
+          <p>Sat: 9:30 AM – 6:30 PM</p>
+          <p>Sun: 11:00 AM – 4:00 PM</p>
+        </div>
+
+        <div class="sMap">
+          <h3>Google Map</h3>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1533.961693135488!2d-82.90480190696991!3d42.62802912778747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8825200a479c7ac5%3A0xf36b2e22698e466c!2sN%20Q%20Nails!5e1!3m2!1sen!2sus!4v1739574629243!5m2!1sen!2sus"
+            width="100%" height="200" style="border:0;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="sMedia">
+          <h3>Follow Us</h3>
+          <div class="mSocial">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>&copy; 2025 NQ Nails. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="nail.js"></script>
 
 </body>
 </html>
