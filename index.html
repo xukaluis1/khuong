@@ -11,28 +11,7 @@
 </head>
 <body>
 
-    <header>
-        <a href="#home" class="branch"><img src="logo-nq.jpg" width="90px" height="90px">NQ Nails</a>
-        <div class="menu"></div>
-        <div class="navigation">
-            <div class="navigation_menu">
-                <a href="demo.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
-                <a href="#faq">FAQ</a>
-            </div>  
-        </div>
-    </header>
-
-<!-- Trang chủ -->
-<section id="home">
-    <div class="banner">
-        <h1>Welcome to NQ Nails</h1>
-        <p>Servies nails professional and unique</p>
-        <a href="#booking" class="cta">Book now</a>
-    </div>
-</section>
+<div id="header"></div>
 
 <section>
     <div class="overmove" id="move1">
@@ -108,18 +87,18 @@
     <div class="feedback-container">
         <div class="feedback active">
             <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer 1" class="customer-img">
-            <p class="feedback-text">"Dịch vụ tuyệt vời! Tôi rất hài lòng."</p>
-            <p class="customer-name">- Nguyễn Thị A</p>
+            <p class="feedback-text">"Amazing Services"</p>
+            <p class="customer-name">- Candy</p>
         </div>
         <div class="feedback">
             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer 2" class="customer-img">
-            <p class="feedback-text">"Sản phẩm chất lượng, giao hàng nhanh chóng!"</p>
-            <p class="customer-name">- Trần Văn B</p>
+            <p class="feedback-text">"Good Product and customer services very well."</p>
+            <p class="customer-name">- Army</p>
         </div>
         <div class="feedback">
             <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Customer 3" class="customer-img">
-            <p class="feedback-text">"Giá cả hợp lý, nhân viên hỗ trợ nhiệt tình!"</p>
-            <p class="customer-name">- Lê Thị C</p>
+            <p class="feedback-text">"Good price"</p>
+            <p class="customer-name">- Gucci</p>
         </div>
         <div class="nav-buttons">
             <button class="btn" onclick="prevFeedback()">&#10094; Trước</button>
@@ -134,24 +113,25 @@
     <h1> Gallery</h1>
     <div class="gallery">
         <div class="left" data-aos="fade-down" data-aos-duration="2000">
-          <div class="inner">
-            <img class="item" src="logo-nq1.jpg" data-counter="1" />
-            <img class="item" src="logo-nq1.jpg" data-counter="2" />
-            <img class="item" src="logo-nq1.jpg" data-counter="3" />
-            <img class="item" src="logo-nq1.jpg" data-counter="4" />
-            <img class="item" src="logo-nq1.jpg" data-counter="5" />
-            <img class="item" src="logo-nq1.jpg" data-counter="6" />
+            <div class="inner">
+                <img class="item" src="IMG1.jpg" data-counter="1" />
+                <img class="item" src="IMG2.jpg" data-counter="2" />
+                <img class="item" src="IMG3.jpg" data-counter="3" />
+                <img class="item" src="IMG4.jpg" data-counter="4" />
+                <img class="item" src="IMG5.jpg" data-counter="5" />
+                <img class="item" src="IMG6.jpg" data-counter="6" />
+            </div>
         </div>
-    </div>
-    <div class="right" data-aos="fade-up" data-aos-duration="2000">
-      <div class="inner">
-        <img class="item" src="logo-nq1.jpg" data-counter="1" />
-        <img class="item" src="logo-nq1.jpg" data-counter="2" />
-        <img class="item" src="logo-nq1.jpg" data-counter="3" />
-        <img class="item" src="logo-nq1.jpg" data-counter="4" />
-        <img class="item" src="logo-nq1.jpg" data-counter="5" />
-        <img class="item" src="logo-nq1.jpg" data-counter="6" />
-    </div>
+        <div class="right" data-aos="fade-up" data-aos-duration="2000">
+            <div class="inner">
+                <img class="item" src="IMG7.jpg" data-counter="1" />
+                <img class="item" src="IMG8.jpg" data-counter="2" />
+                <img class="item" src="IMG9.jpg" data-counter="3" />
+                <img class="item" src="IMG10.jpg" data-counter="4" />
+                <img class="item" src="IMG11.jpg" data-counter="5" />
+                <img class="item" src="IMG11.jpg" data-counter="6" />
+            </div>
+        </div>
 </div>
 </div>
 <div class="bapp">
@@ -165,30 +145,30 @@
 <section id="booking" style="display:none;">
     <h2>Booking</h2>
     <form action="/submit-booking" method="POST">
-        <label for="name">Tên:</label>
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="phone">Số điện thoại:</label>
+        <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" required>
 
-        <label for="service">Dịch vụ:</label>
+        <label for="service">Services:</label>
         <select id="service" name="service">
-            <option value="nail">Làm móng</option>
+            <option value="nail">Manicure</option>
             <option value="gel">Sơn gel</option>
         </select>
 
-        <label for="date">Chọn ngày:</label>
+        <label for="date">Date:</label>
         <input type="date" id="date" name="date" required>
 
-        <button type="submit">Đặt lịch</button>
+        <button type="submit">Make Schedule</button>
     </form>
 </section>
 
-<!-- Liên hệ -->
+<!-- Contact -->
 <section id="contact" style="display:none;">
-    <h2>Liên hệ</h2>
+    <h2>Contact</h2>
     <address>
-        <p>Địa chỉ: </p>
+        <p>Address: </p>
         <p>Phone: </p>
         <p>Email: </p>
     </address>
@@ -238,55 +218,24 @@
     </div>
 </section>
 
-<footer>
-    <div class="iFooter">
-        <div class="footer">
-            <!-- Brand -->
-            <div class="brand">
-                <a href="#home" class="branch1"><img src="logo-nq.jpg" width="50px" height="50px">NQ Nails</a>
-                <p>"Our nail salon offers high-quality nail care services. We bring beautiful and creative nail designs. Come to us for a wonderful beauty experience."</p>
-            </div>
-            
-            <!-- Contact Information -->
-            <div class="con-me">
-                <div class="iContact">
-                    <h3>Contact</h3>
-                    <p>Address: 21306 Hall Rd, Clinton Twp, MI 48038</p>
-                    <p>Email: contact@nqnail.com</p>
-                    <p>Phone: +1 (248) 861-8987</p>
-                </div>
-                
-                <!-- Social Media -->
-                <div class="sMedia">
-                    <h3>Follow Us</h3>
-                    <div class="mSocial">
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">TikTok</a>
-                    </div>
-                </div>
-            </div>
-            <div class="iContact" id="bussiness">
-                <h3>Bussiness Hours</h3>
-                <div class="bussiness">
-                    <p>Mon – Fri: 9:30 am – 7 pm</p>
-                    <p>Sat: 9:30 am – 6:30 pm</p>
-                    <p>Sun: 11 am – 4pm</p>
-                </div>
-            </div>
-            <!-- Map -->
-            <div class="sMap">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1533.961693135488!2d-82.90480190696991!3d42.62802912778747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8825200a479c7ac5%3A0xf36b2e22698e466c!2sN%20Q%20Nails!5e1!3m2!1sen!2sus!4v1739574629243!5m2!1sen!2sus" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-    <div class="copyright">
-        <p>&copy; 2025 NQ Nails. All rights reserved.</p>
-    </div>
-</footer>
+<div id="footer"></div>
+
+  <script>
+    async function loadLayout() {
+      const header = await fetch('header.html').then(res => res.text());
+      const footer = await fetch('footer.html').then(res => res.text());
+      document.getElementById("header").innerHTML = header;
+      document.getElementById("footer").innerHTML = footer;
+    }
+    loadLayout();
+  </script>
 
 
-<!-- Nút Call Now -->
+
+
+
+
+<!-- Call Now -->
 <a href="tel:+12488618987" class="call-now">
     <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone Icon">
     Call Now
