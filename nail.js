@@ -130,7 +130,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     const date = document.getElementById('date').value;
 
     if (!name || !phone || !date) {
-        alert('Vui lòng điền đầy đủ thông tin!');
+        alert('Please fill out all of information');
             e.preventDefault(); 
         }
     });
@@ -156,7 +156,6 @@ function prevFeedback() {
 
 setInterval(nextFeedback, 5000);
 
-    // Image Slider
 let currentIndex = 0;
 const images = document.querySelectorAll('.slider img');
 setInterval(() => {
@@ -165,7 +164,6 @@ setInterval(() => {
     images[currentIndex].classList.add('visible');
 }, 3000);
 
-    // Thêm class CSS cho ảnh hiển thị trong slider
 images.forEach(img => img.classList.add('hidden'));
 images[0].classList.add('visible');
 

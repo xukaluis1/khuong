@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to NQ Nails Gallery">
   <title>NQ Nails - Gallery</title>
-  <link rel="stylesheet" href="nails.css" />
+  <link rel="stylesheet" href="nails.css">
   <style>
     body {
       margin: 0;
@@ -80,22 +81,56 @@
     .pagination button:hover {
       background: #8a5c1b;
     }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .lightbox.show {
+      display: flex;
+    }
+
+    .lightbox .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      background: #AA7520;
+      padding: 0 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-     <header>
-        <a href="#home" class="branch"><img src="logo2.png" width="50px" height="50px"><span class="brand-name">NQ Nails</span></a>
-        <div class="menu"></div>
-        <div class="navigation">
-            <div class="navigation_menu">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
-                <a href="index.html/#faq">FAQ</a>
-            </div>  
-        </div>
-    </header>
+  <header>
+    <a href="#home" class="branch"><img src="logo2.png" width="50px" height="50px"><span class="brand-name">NQ Nails</span></a>
+    <div class="menu"></div>
+    <div class="navigation">
+      <div class="navigation_menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html/#faq">FAQ</a>
+      </div>
+    </div>
+  </header>
 
   <div class="gallery-header">
     <h1>Nail Art Gallery</h1>
@@ -105,65 +140,77 @@
   <div class="gallery-container" id="gallery-container"></div>
   <div class="pagination" id="pagination"></div>
 
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Zoomed Nail">
+  </div>
+
   <footer>
-  <div class="iFooter">
-    <div class="footer-container">
-      <div class="footer">
-        <div class="brand">
-          <a href="#home" class="branch1">
-            <img src="logo-nq.jpg" width="50" height="50" alt="NQ Logo">
-            NQ Nails
-          </a>
-          <p>"Our nail salon offers high-quality nail care services. We bring beautiful and creative nail designs. Come to us for a wonderful beauty experience."</p>
-        </div>
+    <div class="iFooter">
+      <div class="footer-container">
+        <div class="footer">
+          <div class="brand">
+            <a href="#home" class="branch1">
+              <img src="logo-nq.jpg" width="50" height="50" alt="NQ Logo">
+              NQ Nails
+            </a>
+            <p>"Our nail salon offers high-quality nail care services. We bring beautiful and creative nail designs. Come to us for a wonderful beauty experience."</p>
+          </div>
 
-        <div class="iContact">
-          <h3>Contact</h3>
-          <p>Address: 21306 Hall Rd, Clinton Twp, MI 48038</p>
-          <p>Email: contact@nqnail.com</p>
-          <p>Phone: +1 (248) 861-8987</p>
-        </div>
+          <div class="iContact">
+            <h3>Contact</h3>
+            <p>Address: 21306 Hall Rd, Clinton Twp, MI 48038</p>
+            <p>Email: contact@nqnail.com</p>
+            <p>Phone: +1 (248) 861-8987</p>
+          </div>
 
-        <div class="bussiness-hours">
-          <h3>Business Hours</h3>
-          <p>Mon – Fri: 9:30 AM – 7:00 PM</p>
-          <p>Sat: 9:30 AM – 6:30 PM</p>
-          <p>Sun: 11:00 AM – 4:00 PM</p>
-        </div>
+          <div class="bussiness-hours">
+            <h3>Business Hours</h3>
+            <p>Mon – Fri: 9:30 AM – 7:00 PM</p>
+            <p>Sat: 9:30 AM – 6:30 PM</p>
+            <p>Sun: 11:00 AM – 4:00 PM</p>
+          </div>
 
-        <div class="sMap">
-          <h3>Google Map</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1533.961693135488!2d-82.90480190696991!3d42.6. 2802912778747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8825200a479c7ac5%3A0xf36b2e22698e466c!2sN%20Q%20Nails!5e1!3m2!1sen!2sus!4v1739574629243!5m2!1sen!2sus"
-            width="150%" height="200" style="border:0;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+          <div class="sMap">
+            <h3>Google Map</h3>
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
 
-        <div class="sMedia">
-          <h3>Follow Us</h3>
-          <div class="mSocial">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">TikTok</a>
+          <div class="sMedia">
+            <h3>Follow Us</h3>
+            <div class="mSocial">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">TikTok</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="copyright">
-    <p>&copy; 2025 NQ Nails. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="copyright">
+      <p>&copy; 2025 NQ Nails. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
-    const TOTAL_IMAGES = 120; 
+    const TOTAL_IMAGES = 120;
     const IMAGES_PER_PAGE = 40;
-    const imageBasePath = 'images/gallery/'; 
+    const imageBasePath = 'images/gallery/';
 
     const galleryContainer = document.getElementById('gallery-container');
     const pagination = document.getElementById('pagination');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+      lightboxImg.src = src;
+      lightbox.classList.add('show');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+    }
 
     function renderGalleryPage(page = 1) {
       const startIndex = (page - 1) * IMAGES_PER_PAGE;
@@ -178,6 +225,8 @@
         img.onerror = function () {
           img.parentElement?.remove();
         };
+
+        img.onclick = () => openLightbox(img.src);
 
         const wrapper = document.createElement('div');
         wrapper.className = 'gallery-item';
