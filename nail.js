@@ -1,40 +1,34 @@
 // document.addEventListener("DOMContentLoaded", function () {
 //     const menuLinks = document.querySelectorAll(".navigation_menu a");
-//     const buttons = document.querySelectorAll(".cta[href^='#']"); // Lấy tất cả button có href dạng id (#...)
+//     const buttons = document.querySelectorAll(".cta[href^='#']"); 
 //     const sections = document.querySelectorAll("section");
 //     const servicesSection = document.getElementById("services");
 //     const gallerySection = document.getElementById("gallery");
 
-//     // Hàm xử lý khi nhấn vào menu hoặc button
 //     function handleNavigation(event) {
 //         const targetId = this.getAttribute("href").substring(1);
 
 //         if (targetId === "services" || targetId === "gallery") {
-//             event.preventDefault(); // Ngăn chặn cuộn trang mặc định
+//             event.preventDefault(); 
 
-//             // Ẩn tất cả các section trừ header, footer và mục được chọn
 //             sections.forEach(section => {
 //                 if (section.id !== targetId) {
 //                     section.style.display = "none";
 //                 }
 //             });
 
-//             // Hiển thị mục được chọn
 //             document.getElementById(targetId).style.display = "block";
 
-//             // Cuộn đến phần được chọn
 //             document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
 //         } else if (targetId === "home") {
-//             showAllSections(); // Nếu nhấn Home, hiển thị lại toàn bộ
+//             showAllSections(); 
 //         }
 //     }
 
-//     // Thêm sự kiện click vào menu
 //     menuLinks.forEach(link => {
 //         link.addEventListener("click", handleNavigation);
 //     });
 
-//     // Thêm sự kiện click vào button (More Services, More Gallery)
 //     buttons.forEach(button => {
 //         button.addEventListener("click", handleNavigation);
 //     });
@@ -137,7 +131,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
 
     if (!name || !phone || !date) {
         alert('Vui lòng điền đầy đủ thông tin!');
-            e.preventDefault(); // Ngăn gửi form nếu thiếu thông tin
+            e.preventDefault(); 
         }
     });
 

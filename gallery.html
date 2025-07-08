@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NQ Nails - Gallery</title>
+  <link rel="stylesheet" href="nails.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff6f6;
+    }
+
+    .gallery-header {
+      background: linear-gradient(to right, #fcdede, #ffe6e6);
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #AA7520;
+    }
+
+    .gallery-header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-header p {
+      font-size: 1.2rem;
+      color: #5e4c2c;
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .pagination {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .pagination button {
+      margin: 0 5px;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      background: #AA7520;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .pagination button.active {
+      background: #8a5c1b;
+    }
+
+    .pagination button:hover {
+      background: #8a5c1b;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery-header">
+    <h1>Nail Art Gallery</h1>
+    <p>Shine your beauty with stunning nails</p>
+  </div>
+
+  <div class="gallery-container" id="gallery-container"></div>
+  <div class="pagination" id="pagination"></div>
+
+  <script>
+    const TOTAL_IMAGES = 120; // Adjust according to your image count
+    const IMAGES_PER_PAGE = 40;
+    const imageBasePath = 'images/gallery/'; // folder in GitHub repo
+
+    const galleryContainer = document.getElementById('gallery-container');
+    const pagination = document.getElementById('pagination');
+
+    function renderGalleryPage(page = 1) {
+      const startIndex = (page - 1) * IMAGES_PER_PAGE;
+      const endIndex = Math.min(startIndex + IMAGES_PER_PAGE, TOTAL_IMAGES);
+
+      galleryContainer.innerHTML = '';
+      for (let i = startIndex + 1; i <= endIndex; i++) {
+        const img = document.createElement('img');
+        img.src = `${imageBasePath}IMG${i}.jpg`;
+        img.alt = `Nail ${i}`;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'gallery-item';
+        wrapper.appendChild(img);
+
+        galleryContainer.appendChild(wrapper);
+      }
+
+      renderPagination(page);
+    }
+
+    function renderPagination(currentPage) {
+      const totalPages = Math.ceil(TOTAL_IMAGES / IMAGES_PER_PAGE);
+      pagination.innerHTML = '';
+
+      if (currentPage > 1) {
+        const prev = document.createElement('button');
+        prev.textContent = '« Prev';
+        prev.onclick = () => renderGalleryPage(currentPage - 1);
+        pagination.appendChild(prev);
+      }
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        if (i === currentPage) btn.classList.add('active');
+        btn.onclick = () => renderGalleryPage(i);
+        pagination.appendChild(btn);
+      }
+
+      if (currentPage < totalPages) {
+        const next = document.createElement('button');
+        next.textContent = 'Next »';
+        next.onclick = () => renderGalleryPage(currentPage + 1);
+        pagination.appendChild(next);
+      }
+    }
+
+    // Initial render
+    renderGalleryPage(1);
+  </script>
+</body>
+</html>
