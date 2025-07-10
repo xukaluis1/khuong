@@ -1008,6 +1008,9 @@ h3 {
 .footer-box.empty {
   visibility: hidden;
 }
+.iContact p{
+    text-decoration: none;
+}
 
 .copyright {
   text-align: center;
